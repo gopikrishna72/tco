@@ -20,11 +20,7 @@ module "eip" {
   source = "./modules/networking/eip"
 
 }
-module "eip1" {
 
-  source = "./modules/networking/eip"
-
-}
 
 
 module "public_subnets" {
@@ -57,22 +53,25 @@ module "security_group_rules" {
   sg_rules = var.sg_rules  
 }
 
+module "igw" {
+  source = "./modules/networking/igw"
+  vpc_id = module.vpc.vpc_id
 
-/*
+}
+
+
 module "nat_gateway" {
 
   source = "./modules/networking/natgw"
   
-  depends_on = [
-        "${module.public_subnets.ids}"
-    ]
+  igw = module.igw.igw_id
   
   eip_id = module.eip.eip_id
   subnet_id = module.public_subnets.ids["subnet1"].id
 
 
 }
-*/
+
 
 
 

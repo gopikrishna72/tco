@@ -2,5 +2,6 @@
  
    allocation_id = var.eip_id
    subnet_id = var.subnet_id
+   depends_on = [var.igw]
   
  }

@@ -9,3 +9,9 @@ variable "subnet_id" {
    type = string
   
 }
+
+variable "igw" {
+
+  type = string
+
+}
