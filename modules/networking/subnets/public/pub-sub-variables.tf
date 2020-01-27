@@ -27,12 +27,7 @@ variable "vpc_id"{
 
 
 
-variable "AZs" {
-  
-  type = list(string)
-  default = ["a","b","c","d","e","f"]
 
-}
 
 variable "region" {
   

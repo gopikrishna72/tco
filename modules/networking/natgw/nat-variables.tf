@@ -1,11 +1,11 @@
 variable "eip_id"{
 
-  type : string
+  type = string
 
 }
 
 variable "subnet_id" {
 
-   type : string
+   type = string
   
 }
