@@ -1,13 +1,16 @@
-# Create a new instance of the amazon linux
-
-resource "aws_instance" "web" {
-  count         = "${var.ec2_count}"
-  ami_id          = "${var.ami_id}"
-  instance_type = "${var.instance_type}"
-  subnet_id     = "${var.subnet_id}"
-
-  tags = {
-    Name = "HelloWorld"
-  }
-  }
-
+output "instance_count" {
+  description = "Number of instances to launch specified as argument to this module"
+  value       = var.ec2_count
+}
+output "id" {
+  description = "List of ami_id of instances"
+  value       = var.ami_id
+}
+output "instance_type" {
+  description = "List of instances type"
+  value       = var.instance_type
+}
+output "subnet_id" {
+  description = "instance subnet id"
+  value       = var.subnet_id
+}
